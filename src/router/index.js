@@ -1,5 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+import Home from '../views/front/Home.vue'
+import HiddenPage1 from "../views/front/HiddenPage1";
+import HiddenPage2 from "../views/front/HiddenPage2";
+import Login from "../views/auth/Login";
+import Register from "../views/auth/Register";
 
 const routes = [
   {
@@ -8,12 +12,29 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/hidden-page-1',
+    name: 'hidden-page-1',
+    component: HiddenPage1
+  },
+  {
+    path: '/hidden-page-2',
+    name: 'hidden-page-2',
+    component: HiddenPage2
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: Register
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login
+  },
+  {
+    path: '/logout',
+    name: 'logout',
+    component: HiddenPage2
   }
 ]
 
